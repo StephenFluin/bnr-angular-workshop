@@ -1,0 +1,9 @@
+.details__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16px;
+
+  img {
+    width: 100%;
+  }
+}
