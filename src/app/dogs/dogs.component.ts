@@ -7,6 +7,8 @@ import { DogList as dogs } from '../dogs';
 })
 export class DogsComponent implements OnInit {
   dogs = dogs.data;
+  searchValue = '';
+
   constructor() { }
 
   ngOnInit() {
@@ -21,6 +23,27 @@ export class DogsComponent implements OnInit {
     event.stopPropagation();
     const dog = this.dogs.find(dog => dog.name === name);
     dog.favorite = true;
+  }
+  filterDogs() {
+    const lowerSearch = this.searchValue.toLowerCase();
+
+    this.dogs = dogs.data.filter(dog => {
+      if (!this.searchValue) return true;
+
+      const matchesName = dog.name.toLowerCase().includes(lowerSearch);
+      const matchesNickname = dog.nickname.toLowerCase().includes(lowerSearch);
+      const matchesDescription = dog.description.toLowerCase().includes(lowerSearch);
+
+      const isTextMatch = (matchesName || matchesNickname || matchesDescription) && lowerSearch.length;
+
+      if (lowerSearch.length) {
+        return isTextMatch;
+      }
+    });
+  }
+  onKey(event: KeyboardEvent) {
+    this.searchValue = (event.target as HTMLInputElement).value;
+    this.filterDogs();
   }
 
 }

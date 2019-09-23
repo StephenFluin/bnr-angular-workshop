@@ -6,9 +6,7 @@ import { DetailsComponent } from './details/details.component';
 import { DogsComponent } from './dogs/dogs.component';
 const routes: Routes = [
   {path: '', component: DogsComponent},
-  {
-  path: 'login', component: LoginComponent
-},
+  {  path: 'login', component: LoginComponent},
 { path: 'new-dog', component: NewDogComponent },
 { path: 'details/:name', component: DetailsComponent },
 ];

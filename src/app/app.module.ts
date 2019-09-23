@@ -12,6 +12,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { DogsComponent } from './dogs/dogs.component';
 
 @NgModule({
@@ -32,6 +34,8 @@ import { DogsComponent } from './dogs/dogs.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
