@@ -12,7 +12,9 @@ export class DetailsComponent implements OnInit {
 
   dog: Dog;
 
-  constructor(private route: ActivatedRoute) { }
+
+  constructor(private route: ActivatedRoute) {
+   }
 
   ngOnInit() {
     const name = this.route.snapshot.params.name || '';

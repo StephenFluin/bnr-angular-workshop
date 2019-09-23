@@ -8,6 +8,20 @@
     />
   </mat-form-field>
 </div>
+<div class='dogs__filters'>
+    <mat-form-field class='dogs__filter'>
+      <mat-label>Breed</mat-label>
+      <mat-select (selectionChange)="onBreedChange($event.value)">
+        <mat-option value="">Any</mat-option>
+        <mat-option
+          *ngFor='let breed of breeds'
+          value='{{breed}}'
+        >
+          {{breed | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
 <h1 *ngIf='!searchValue' class='dogs__headline mdc-typography--headline2'>
   Featured pets
@@ -17,6 +31,7 @@
   <h2 class='mdc-typography--headline5'>
     Results for "{{searchValue}}"
   </h2>
+
 </div>
 
 <div class='dogs__container'>
