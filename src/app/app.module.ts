@@ -9,13 +9,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { DogsComponent } from './dogs/dogs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NewDogComponent,
-    DetailsComponent
+    DetailsComponent,
+    DogsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +29,9 @@ import { MatChipsModule } from '@angular/material/chips';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatChipsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
